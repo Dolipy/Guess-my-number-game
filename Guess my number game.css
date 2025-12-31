@@ -1,0 +1,135 @@
+    * {
+        padding: 0px;
+        margin: 0px;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        background-image: linear-gradient(to bottom, #3535ff, #a057e3, #ff7eb3, #ff9c7c, #ffbc3f);
+        width: 100%;
+        height: 100vh;
+    }
+    
+    button {
+        background-color: #fcfcfe;
+        color: #050505;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: block;
+    }
+    
+    .borderline {
+        border: 2px solid #ffffff;
+        width: 100%;
+        position: absolute;
+        top: 60%;
+    }
+    
+    .text {
+        margin-left: 47.5%;
+        color: black;
+        position: absolute;
+        font-size: 50px;
+        border: 0.5px solid #ffffff;
+        display: inline;
+        padding: 15px;
+        background-color: #ffffff;
+        top: 50%;
+        z-index: 1;
+    }
+    
+    .again p {
+        font-size: 20px;
+        font-weight: 400;
+        margin-right: 15px;
+        position: absolute;
+        top: 18%;
+        left: 80%;
+    }
+    
+    .guess {
+        text-align: center;
+        font-size: 80px;
+        font-weight: 500;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        position: absolute;
+        top: 30%;
+        left: 25%;
+    }
+    
+    .clue button {
+        margin-top: 80px;
+        margin-left: 60px;
+        color: black;
+        background-color: yellow;
+        width: 200px;
+        font-size: 25px;
+    }
+    
+    .borderframe {
+        border: 2px solid #ffffff;
+        width: 10%;
+        margin-left: 5%;
+        margin-top: 50px;
+        padding: 20px;
+        background-color: transparent;
+        text-align: center;
+    }
+    
+    .check {
+        margin-top: 15px;
+        margin-left: 8%;
+        background-color: #76fefe;
+    }
+    
+    .info {
+        position: absolute;
+        left: 70%;
+        top: 70%;
+        font-size: 25px;
+    }
+    
+    .info p {
+        padding-top: 15px;
+    }
+    
+    .checkers {
+        margin-top: 20%;
+    }
+    
+    .clue-text {
+        position: absolute;
+        left: 80%;
+        top: 16%;
+    }
+    
+    .check :hover {
+        background-image: linear-gradient(to top, #ff0000, #ffaa00, #f3fc00, #00ddfe, #ff00d0);
+    }
+    
+    #exit {
+        position: absolute;
+        top: 1%;
+        left: 40%;
+        background-image: linear-gradient(to top, #bd71ff, #ff00f7, #00ffff);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    #restart {
+        position: absolute;
+        top: 1%;
+        left: 20%;
+        background-image: linear-gradient(to top, #ff0000, #ffae00, #f6ff00);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
