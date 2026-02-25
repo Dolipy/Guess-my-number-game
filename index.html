@@ -4,42 +4,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess my number game!</title>
+    <meta name="description"
+        content="Guess My Number - A fun number guessing game. Try to guess the secret number between 1 and 20!">
+    <title>Guess My Number! 🎯</title>
     <link rel="stylesheet" href="Guess my number game.css">
     <link rel="icon" href="GMNG icon.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="clue">
-        <button id="Again">🔄Continue!</button>
-        <p class="clue-text">
-            Clue:Between 1 and 20
-        </p>
-        <button id="exit">💨Exit!</button>
-        <button id="restart">🔁Restart!
+    <!-- Animated background particles -->
+    <canvas id="particles"></canvas>
+
+    <!-- Top Controls Bar -->
+    <header class="top-bar">
+        <button id="restart" aria-label="Restart game">
+            <span class="btn-icon">�</span>
+            <span class="btn-label">Restart</span>
+        </button>
+        <div class="clue-badge">
+            <span class="clue-icon">💡</span>
+            <span class="clue-text">Between 1 and 20</span>
+        </div>
+        <div class="top-bar-right">
+            <button id="Again" aria-label="Continue to next round">
+                <span class="btn-icon">🔄</span>
+                <span class="btn-label">Continue</span>
             </button>
-    </div>
-    <div class="guess"> Guess my number!</div>
-    <div>
-        <p class="text">?</p>
-        <p class="borderline"></p>
-    </div>
-    <div class="checkers">
-        <input type="number" name="display" class="borderframe">
-        <button class="check">✅❌Check!</button>
+            <button id="exit" aria-label="Exit game">
+                <span class="btn-icon">�</span>
+                <span class="btn-label">Exit</span>
+            </button>
+        </div>
+    </header>
 
+    <!-- Main Game Area -->
+    <main class="game-container">
+        <h1 class="game-title" id="game-title">Guess My Number!</h1>
+        <p class="game-subtitle">Can you crack the secret code?</p>
 
-    </div>
-    <div class="info">
-        <p class="guessing">🤔Start guessing...</p>
-        <p class="lives">💘💞Lives: 20;</p>
-        <p class="score">🎁Score: 0;</p>
-        <p class="highscore">🥰Highscore: 0;</p>
+        <!-- Secret Number Display -->
+        <div class="secret-box-wrapper">
+            <div class="secret-box" id="secret-box">
+                <span class="secret-number" id="secret-number">?</span>
+            </div>
+            <div class="glow-ring"></div>
+        </div>
 
+        <!-- Divider -->
+        <div class="divider">
+            <span class="divider-line"></span>
+            <span class="divider-diamond">◆</span>
+            <span class="divider-line"></span>
+        </div>
+
+        <!-- Input & Check Section -->
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input type="number" name="display" class="borderframe" id="guess-input" placeholder="?" min="1"
+                    max="20" aria-label="Enter your guess">
+            </div>
+            <button class="check-btn" id="check-btn">
+                <span class="check-icon">🎯</span>
+                <span>Check!</span>
+            </button>
+        </div>
+
+        <!-- Feedback Message -->
+        <div class="feedback-card" id="feedback-card">
+            <p class="guessing" id="guessing-text">🤔 Start guessing...</p>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-card stat-lives" id="stat-lives">
+                <span class="stat-icon">�</span>
+                <span class="stat-label">Lives</span>
+                <span class="stat-value" id="lives-value">20</span>
+            </div>
+            <div class="stat-card stat-score" id="stat-score">
+                <span class="stat-icon">🎁</span>
+                <span class="stat-label">Score</span>
+                <span class="stat-value" id="score-value">0</span>
+            </div>
+            <div class="stat-card stat-highscore" id="stat-highscore">
+                <span class="stat-icon">🏆</span>
+                <span class="stat-label">Highscore</span>
+                <span class="stat-value" id="highscore-value">0</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Game Over Overlay -->
+    <div class="overlay" id="game-over-overlay">
+        <div class="overlay-card">
+            <h2 class="overlay-title" id="overlay-title">💀 Game Over!</h2>
+            <p class="overlay-message" id="overlay-message">You ran out of lives!</p>
+            <button class="overlay-btn" id="overlay-restart-btn">🔁 Play Again</button>
+        </div>
     </div>
+
+    <!-- Win Confetti Overlay -->
+    <canvas id="confetti-canvas"></canvas>
 
     <script src="Guess my number game.js"></script>
 </body>
-
 
 </html>
